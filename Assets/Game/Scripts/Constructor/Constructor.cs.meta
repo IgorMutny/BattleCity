@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 82476f0a1b0aaa14194f142b97f3308f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _brickSample: {fileID: 2015749516910203244, guid: 8e299867d5dbe3d4a96c56d831a005f7, type: 3}
+  - _steelSample: {fileID: 6837056183236135794, guid: d07e34b0114d38f49966d999ece477f5, type: 3}
+  - _bushSample: {fileID: 6837056183236135794, guid: f4b86ea7537d8df4cb21d83fe450351f, type: 3}
+  - _iceSample: {fileID: 6837056183236135794, guid: 587de38ddd3e66f43a81089d63736667, type: 3}
+  - _waterSample: {fileID: 6837056183236135794, guid: dbf5775084a4ce342ba81f61be20d88f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

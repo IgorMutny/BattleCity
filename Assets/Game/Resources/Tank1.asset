@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a6e5db17a428c48816a822787f664d, type: 3}
+  m_Name: Tank1
+  m_EditorClassIdentifier: 
+  Type: 1
+  Sprites:
+  - {fileID: 2035345452, guid: 7061533a3559af74a8d58dc99310dbaa, type: 3}
+  - {fileID: 2089222298, guid: 7061533a3559af74a8d58dc99310dbaa, type: 3}
+  DefaultColor: {r: 1, g: 1, b: 0, a: 1}
+  AnimationTime: 0.05
+  Health: 1
+  Speed: 6
+  BulletSample: {fileID: 2081262108453792852, guid: 45f6e937c33caec49a156a81d708aee5, type: 3}
+  BulletsPerShot: 1
+  ScoreForDestruction: 0
