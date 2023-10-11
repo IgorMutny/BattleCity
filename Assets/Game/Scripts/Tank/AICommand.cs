@@ -180,6 +180,7 @@ public class CheckTargetPositionCommand : AICommand
                 }
 
                 if (result.collider.GetComponent<Obstacle>() != null
+                    && result.collider.GetComponent<Water>() == null
                     && result.collider.GetComponent<AIController>() != _tank)
                 {
                     return;

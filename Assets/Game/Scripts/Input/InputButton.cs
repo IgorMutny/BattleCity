@@ -15,10 +15,12 @@ public class InputButton : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        Touch[] touches = Input.touches;
+
+        foreach (Touch touch in touches)
         {
-            Vector3 mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 origin = new Vector2(mousePosition.x, mousePosition.y);
+            Vector3 touchPosition = _camera.ScreenToWorldPoint(touch.position);
+            Vector2 origin = new Vector2(touchPosition.x, touchPosition.y);
 
             RaycastHit2D[] results = Physics2D.CircleCastAll(origin, 1f, Vector2.zero);
             foreach (RaycastHit2D result in results)

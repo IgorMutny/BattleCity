@@ -89,10 +89,13 @@ public class BattleState : GameStateBase
         GameObject gameManager = GameObject.FindObjectOfType<EntryPoint>().gameObject;
         _battle = gameManager.AddComponent<Battle>();
         _battle.Init();
+
+        Camera.main.transform.position = new Vector3(10.5f, 12.5f, -10);
     }
 
     public override void Exit()
     {
+        Camera.main.transform.position = new Vector3(13.5f, 12.5f, -10);
         GameObject.Destroy(_battle);
     }
 }
