@@ -81,7 +81,7 @@ public class TankMoving
         RaycastHit2D[] results = Physics2D.RaycastAll(_transform.position, GetCurrentDirection(), 1f);
         foreach (RaycastHit2D result in results)
         {
-            if (result.collider.GetComponent<Obstacle>() != null && result.collider.transform != _transform)
+            if (result.collider.GetComponent<IObstacle>() != null && result.collider.transform != _transform)
             {
                 return false;
             }

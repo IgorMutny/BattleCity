@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Brick : TileObject
+public class Brick : TileObject, IObstacle, IDamageableObstacle
 {
     enum Elements
     {
@@ -14,7 +14,7 @@ public class Brick : TileObject
     [SerializeField] private GameObject[] _elementMasks;
     private bool[] _elements = new bool[4];
 
-    public void TakeDamage(Quaternion rotation, bool isPowered)
+    public bool TakeDamage(Quaternion rotation, bool isPowered)
     {
         if (isPowered == false)
         {
@@ -33,6 +33,8 @@ public class Brick : TileObject
         {
             Destroy();
         }
+
+        return true;
     }
 
     private void Start()

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7170013426831281158}
   - component: {fileID: 6549886086195645931}
-  - component: {fileID: 749331473035654327}
   - component: {fileID: 1401815869743708171}
   m_Layer: 3
   m_Name: Bedrock
@@ -32,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6549886086195645931
 BoxCollider2D:
@@ -79,18 +78,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &749331473035654327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7846870555816694238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5f6fffbfacca91449a9eeee6f27556b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1401815869743708171
 MonoBehaviour:
   m_ObjectHideFlags: 0

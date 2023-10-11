@@ -63,7 +63,7 @@ public class Spawner : MonoBehaviour
 
         foreach (RaycastHit2D result in results)
         {
-            if (result.collider.GetComponent<Obstacle>() != null)
+            if (result.collider.GetComponent<IObstacle>() != null)
             {
                 return false;
             }

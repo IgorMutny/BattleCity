@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4112957668146807607}
   - component: {fileID: -3778273024430088014}
   - component: {fileID: -9003528364743900719}
-  - component: {fileID: 4806003091675184073}
   m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
@@ -33,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4112957668146807607
 SpriteRenderer:
@@ -102,7 +101,6 @@ MonoBehaviour:
   _sprites:
   - {fileID: 729698545, guid: f4fe43ec83fd6a749b303e0f44e9ca9c, type: 3}
   - {fileID: 103753182, guid: f4fe43ec83fd6a749b303e0f44e9ca9c, type: 3}
-  _animationSpeed: 0.5
 --- !u!61 &-9003528364743900719
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,15 +146,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4806003091675184073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6837056183236135794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5f6fffbfacca91449a9eeee6f27556b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

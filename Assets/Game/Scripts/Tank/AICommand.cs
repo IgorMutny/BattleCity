@@ -179,7 +179,7 @@ public class CheckTargetPositionCommand : AICommand
                     _tank.AddCommand(new ShootCommand(_tank), _timeToShoot);
                 }
 
-                if (result.collider.GetComponent<Obstacle>() != null
+                if (result.collider.GetComponent<IObstacle>() != null
                     && result.collider.GetComponent<Water>() == null
                     && result.collider.GetComponent<AIController>() != _tank)
                 {

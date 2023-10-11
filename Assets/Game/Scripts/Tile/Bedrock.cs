@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bedrock : MonoBehaviour
+public class Bedrock : MonoBehaviour, IObstacle
 {
 
 }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Water : TileObject
+public class Water : TileObject, IObstacle
 {
     [SerializeField] private List<Sprite> _sprites;
 

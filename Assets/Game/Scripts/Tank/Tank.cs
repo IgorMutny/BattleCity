@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Tank : MonoBehaviour
+public abstract class Tank : MonoBehaviour, IObstacle
 {
     [SerializeField] private List<TankSO> _tankTypes;
 

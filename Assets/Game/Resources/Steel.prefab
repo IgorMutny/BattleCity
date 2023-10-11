@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4112957668146807607}
   - component: {fileID: -4187324628536956919}
   - component: {fileID: 4053869779241974096}
-  - component: {fileID: 2324854250230338919}
   m_Layer: 3
   m_Name: Steel
   m_TagString: Untagged
@@ -33,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4112957668146807607
 SpriteRenderer:
@@ -142,17 +141,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8902b192ef4cdb440978659602450675, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2324854250230338919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6837056183236135794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5f6fffbfacca91449a9eeee6f27556b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

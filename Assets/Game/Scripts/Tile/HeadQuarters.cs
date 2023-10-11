@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HeadQuarters : MonoBehaviour
+public class HeadQuarters : MonoBehaviour, IObstacle, IDamageableObstacle
 {
     [SerializeField] private Sprite _destroyedSprite;
 
@@ -12,7 +12,7 @@ public class HeadQuarters : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void Destroy()
+    public bool TakeDamage(Quaternion rotation, bool isPowered)
     {
         if (_isDestroyed == false)
         {
@@ -20,6 +20,11 @@ public class HeadQuarters : MonoBehaviour
             EventBus.Invoke(new DefeatEvent());
             EventBus.Invoke(new SoundEvent(AudioController.PlayerDestroyedKey));
             _spriteRenderer.sprite = _destroyedSprite;
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1122055149098820431}
   - component: {fileID: 7260333263441799192}
   - component: {fileID: 4343600054333290742}
-  - component: {fileID: -9166662699161088659}
   - component: {fileID: 9039782715611506386}
   - component: {fileID: -3456863816618221863}
   m_Layer: 3
@@ -133,18 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &-9166662699161088659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6426053412146171312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5f6fffbfacca91449a9eeee6f27556b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &9039782715611506386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +153,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9734d5cc3f03bf842b0eba650b0c1468, type: 2}
   - {fileID: 11400000, guid: fa30c7f75d4405d499e65daa3354a324, type: 2}
   - {fileID: 11400000, guid: 942af194ce9e401418539bbf9d8d2da8, type: 2}
-  IsPaused: 0
 --- !u!114 &-3456863816618221863
 MonoBehaviour:
   m_ObjectHideFlags: 0

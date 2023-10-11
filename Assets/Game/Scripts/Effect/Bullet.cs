@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Bullet : MonoBehaviour
+public abstract class Bullet : MonoBehaviour, IObstacle, IDamageableObstacle
 {
     [SerializeField] private float _speed;
     [SerializeField] private bool _powered;
@@ -41,8 +41,7 @@ public abstract class Bullet : MonoBehaviour
 
             if (tankHit == true || tileHit == true)
             {
-                Instantiate(_littleExplosionSample, _transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                TakeDamage(Quaternion.identity, false);
             }
         }
     }
@@ -54,56 +53,47 @@ public abstract class Bullet : MonoBehaviour
         RaycastHit2D[] raycastHits = Physics2D.BoxCastAll(
         _transform.position, new Vector2(_size, _size), 0, Vector2.zero, 0);
 
-        bool destroyed = false;
+        bool bulletDestroyed = false;
+        bool objectDestroyed = false;
 
         foreach (RaycastHit2D raycastHit in raycastHits)
         {
-            if (raycastHit.collider.GetComponent<HeadQuarters>() != null)
+            IDamageableObstacle damageable = raycastHit.collider.GetComponent<IDamageableObstacle>();
+            if (damageable != null && damageable != (IDamageableObstacle)this)
             {
-                raycastHit.collider.GetComponent<HeadQuarters>().Destroy();
-                destroyed = true;
+                objectDestroyed = damageable.TakeDamage(transform.rotation, _powered);
             }
 
-            if (raycastHit.collider.GetComponent<Brick>() != null)
+            IObstacle obstacle = raycastHit.collider.GetComponent<IObstacle>();
+            bool isTank = raycastHit.collider.GetComponent<Tank>();
+            bool isWater = raycastHit.collider.GetComponent<Water>();
+            if (obstacle != null && obstacle != (IObstacle)this && isTank == false && isWater == false)
             {
-                raycastHit.collider.GetComponent<Brick>().TakeDamage(transform.rotation, _powered);
-                if (_isOfPlayer == true)
-                {
-                    EventBus.Invoke(new SoundEvent(AudioController.BulletDestroyedWithObstacleKey));
-                }
-                destroyed = true;
-            }
-
-            if (raycastHit.collider.GetComponent<Steel>() != null)
-            {
-                raycastHit.collider.GetComponent<Steel>().TakeDamage(_powered);
-                if (_isOfPlayer == true)
-                {
-                    EventBus.Invoke(new SoundEvent(AudioController.BulletDestroyedKey));
-                }
-                destroyed = true;
-            }
-
-            if (raycastHit.collider.GetComponent<Bullet>() != null && raycastHit.collider.GetComponent<Bullet>() != this)
-            {
-                if (_isOfPlayer == true)
-                {
-                    EventBus.Invoke(new SoundEvent(AudioController.BulletDestroyedWithObstacleKey));
-                }
-                destroyed = true;
-            }
-
-            if (raycastHit.collider.GetComponent<Bedrock>() != null)
-            {
-                if (_isOfPlayer == true)
-                {
-                    EventBus.Invoke(new SoundEvent(AudioController.BulletDestroyedKey));
-                }
-                destroyed = true;
+                bulletDestroyed = true;
             }
         }
 
-        return destroyed;
+        if (_isOfPlayer == true && bulletDestroyed == true)
+        {
+            if (objectDestroyed == true)
+            {
+                EventBus.Invoke(new SoundEvent(AudioController.BulletDestroyedWithObstacleKey));
+            }
+            else
+            {
+                EventBus.Invoke(new SoundEvent(AudioController.BulletDestroyedKey));
+            }
+        }
+
+        return bulletDestroyed;
+    }
+
+    public bool TakeDamage(Quaternion rotation, bool isPowered)
+    {
+        Instantiate(_littleExplosionSample, _transform.position, Quaternion.identity);
+        Destroy(gameObject);
+
+        return true;
     }
 
     protected virtual void OnDestroy()
